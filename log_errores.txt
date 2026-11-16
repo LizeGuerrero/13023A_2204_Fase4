@@ -1,0 +1,9 @@
+[2026-11-15 17:50:05] [ERROR] [Cliente] Correo inválido 'luis@correo': el dominio debe tener un '.' válido (ej. ejemplo.com) | Tipo: SoftwareFJError
+[2026-11-15 17:50:05] [ERROR] [Cliente] Correo inválido 'luis@correo': el dominio debe tener un '.' válido (ej. ejemplo.com) | Tipo: SoftwareFJError
+[2026-11-15 18:00:41] [ERROR] [Cliente] Correo inválido 'luis@correo': el dominio debe tener un '.' válido (ej. ejemplo.com) | Tipo: SoftwareFJError
+[2026-11-15 18:03:51] [ERROR] [Cliente] Correo inválido 'luis@correo': el dominio debe tener un '.' válido (ej. ejemplo.com) | Tipo: SoftwareFJError
+[2026-11-15 18:04:37] [ERROR] [Cliente] Correo inválido 'luis@correo': el dominio debe tener un '.' válido (ej. ejemplo.com) | Tipo: SoftwareFJError
+[2026-11-15 19:09:14] [INFO] [Reserva] Reserva 'R-EJEMPLO': Pendiente a Confirmada
+[2026-11-15 19:09:14] [INFO] [Reserva] Reserva 'R-EJEMPLO': Confirmada a Procesada
+[2026-11-15 19:09:14] [INFO] [Reserva] Fin del intento de procesar la reserva 'R-EJEMPLO'
+[2026-11-15 19:09:14] [ERROR] [SalaReuniones] La sala 'Sala Andes' tiene capacidad para 10 personas y se pidieron 12 | Tipo: RecursoNoDisponibleError

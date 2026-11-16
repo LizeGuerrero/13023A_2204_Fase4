@@ -16,8 +16,9 @@ Contenido del módulo
 1. ``registrar_error``      : función de logging que escribe en ``log_errores.txt``
                               con fecha y hora exactas. Nunca lanza excepciones.
 2. ``SoftwareFJError``      : excepción base del sistema (errores de negocio).
-3. Excepciones derivadas    : ``ValidacionError``, ``OperacionNoPermitidaError``
-                              y ``RecursoNoDisponibleError``.
+3. Excepciones derivadas    : ``ValidacionError``, ``OperacionNoPermitidaError``,
+                              ``RecursoNoDisponibleError`` y
+                              ``CalculoInconsistenteError``.
 4. ``ejecutar_seguro``      : utilidad que ejecuta una función capturando
                               cualquier error para que la aplicación NO se caiga.
 
@@ -210,6 +211,14 @@ class RecursoNoDisponibleError(SoftwareFJError):
     """Se lanza cuando un recurso requerido no existe o no está disponible.
 
     Ejemplos: cliente no encontrado, servicio sin cupo, archivo inexistente.
+    """
+
+
+class CalculoInconsistenteError(SoftwareFJError):
+    """Se lanza cuando un cálculo (costos, impuestos, descuentos) da un
+    resultado que no tiene sentido o no se puede calcular.
+
+    Ejemplos: total negativo, resultado no numérico, división por cero.
     """
 
 

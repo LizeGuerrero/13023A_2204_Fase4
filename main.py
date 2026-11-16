@@ -39,7 +39,7 @@ Ejecución
 from excepciones import SoftwareFJError, registrar_error
 from gestor import GestorClientes
 from modelos import Cliente
-
+from consola_servicios import opcion_servicios
 
 # ---------------------------------------------------------------------------
 # Funciones de apoyo de la interfaz
@@ -54,7 +54,9 @@ def mostrar_menu() -> None:
     print("3. Buscar un cliente por identificador")
     print("4. Guardar clientes en archivo")
     print("5. Cargar clientes desde archivo")
-    print("6. Salir")
+    print("6. Ver servicios y reservas")
+    print("7. Salir")
+    
     print("-" * 40)
 
 
@@ -175,6 +177,7 @@ def main() -> None:
         "3": opcion_buscar,
         "4": opcion_guardar,
         "5": opcion_cargar,
+        "6": opcion_servicios,
     }
 
     print("Bienvenido a Software FJ")
@@ -183,10 +186,10 @@ def main() -> None:
         mostrar_menu()
 
         try:
-            opcion = input("Seleccione una opción (1-6): ").strip()
+            opcion = input("Seleccione una opción (1-7): ").strip()
 
             # Opción de salida: rompe el bucle y termina el programa.
-            if opcion == "6":
+            if opcion == "7":
                 print("\nGracias por usar Software FJ. ¡Hasta pronto!")
                 break
 
