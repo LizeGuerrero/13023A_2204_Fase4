@@ -228,20 +228,3 @@ class Cliente(EntidadBase):
             f"Cliente [ID: {self.identificador}] "
             f"Nombre: {self.nombre} | Correo: {self.correo}"
         )
-        
-        
-        
-
-
-        from modelos import Cliente
-from excepciones import SoftwareFJError
-
-c = Cliente("1001", "Ana Pérez", "ana@correo.com")
-print(c)  # Cliente [ID: 1001] Nombre: Ana Pérez | Correo: ana@correo.com
-
-try:
-    Cliente("1002", "Luis", "luis@correo")
-except SoftwareFJError as e:
-    print(e)  # queda registrado en log_errores.txt
-    
-    
