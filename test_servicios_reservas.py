@@ -24,6 +24,8 @@ from excepciones import (
 )
 
 # Clases que se van a probar
+from gestor_reservas import GestorReservas
+from gestor_servicios import GestorServicios
 from modelos import Cliente
 from reservas import EstadoReserva, Reserva
 from servicios import AlquilerEquipo, AsesoriaEspecializada, SalaReuniones, Servicio
@@ -186,5 +188,30 @@ if __name__ == "__main__":
     # 13. El programa sigue funcionando después de todos los errores
     assert isinstance(SoftwareFJError("prueba final"), Exception)
     print("13. El sistema sigue activo: correcto")
+
+    # 14. Gestor de servicios: agregar, buscar, duplicados y tipo incorrecto
+    gestor_s = GestorServicios()
+    gestor_s.agregar_servicio(sala)
+    gestor_s.agregar_servicio(equipo)
+    assert len(gestor_s) == 2
+    assert gestor_s.buscar_servicio("S-01") is sala
+    assert gestor_s.existe_servicio("E-01") and not gestor_s.existe_servicio("Z-99")
+    esperar_error(OperacionNoPermitidaError, gestor_s.agregar_servicio, sala)
+    esperar_error(ValidacionError, gestor_s.agregar_servicio, "no soy servicio")
+    esperar_error(RecursoNoDisponibleError, gestor_s.buscar_servicio, "Z-99")
+    # La lista que devuelve es una copia: modificarla no afecta al gestor
+    gestor_s.listar_servicios().clear()
+    assert len(gestor_s) == 2
+    print("14. Gestor de servicios: correcto")
+
+    # 15. Gestor de reservas: agregar, buscar, duplicados y tipo incorrecto
+    gestor_r = GestorReservas()
+    gestor_r.agregar_reserva(reserva)
+    assert len(gestor_r) == 1
+    assert gestor_r.buscar_reserva("R-001") is reserva
+    esperar_error(OperacionNoPermitidaError, gestor_r.agregar_reserva, reserva)
+    esperar_error(ValidacionError, gestor_r.agregar_reserva, "no soy reserva")
+    esperar_error(RecursoNoDisponibleError, gestor_r.buscar_reserva, "R-999")
+    print("15. Gestor de reservas: correcto")
 
     print("Todas las pruebas pasaron. Revisa log_errores.txt para ver los eventos.")
