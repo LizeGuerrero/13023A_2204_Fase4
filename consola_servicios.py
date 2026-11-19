@@ -434,6 +434,14 @@ def opcion_servicios(gestor_clientes):
 
         accion = acciones.get(opcion)
         if accion is None:
+            registrar_error(
+                # Registrar la opción inválida en el archivo de logs.
+                    mensaje=f"Opción no válida en servicios y reservas: {opcion[:80]!r}",
+                    nivel="ADVERTENCIA",
+                    contexto="consola_servicios",
+                )
+
+                # Informar al usuario sin interrumpir el submenú.
             print("Opción no válida. Digite un número del 1 al 9.")
             continue
 

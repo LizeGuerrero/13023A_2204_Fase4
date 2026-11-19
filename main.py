@@ -13,7 +13,8 @@ Ofrece un menú interactivo en bucle que permite:
     3. Buscar un cliente por su identificador.
     4. Guardar los clientes en el archivo de texto (``clientes.txt``).
     5. Cargar los clientes desde el archivo de texto.
-    6. Salir del programa.
+    6. Ver servicios y reservas
+    7. Salir del programa.
 
 Estabilidad
 -----------
@@ -195,8 +196,15 @@ def main() -> None:
 
             accion = acciones.get(opcion)
             if accion is None:
-                # Opción fuera del menú: se avisa y se vuelve a mostrar el menú.
-                print("⚠ Opción no válida. Digite un número del 1 al 6.")
+                # Registrar la opción inválida sin interrumpir el programa.
+                registrar_error(
+                    mensaje=f"Opción no válida en menú principal: {opcion[:80]!r}",
+                    nivel="ADVERTENCIA",
+                    contexto="main",
+                )
+
+                # Informar al usuario y volver a mostrar el menú.
+                print("⚠ Opción no válida. Digite un número del 1 al 7.")
                 continue
 
             # Se ejecuta la acción elegida.
