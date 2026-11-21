@@ -7,3 +7,17 @@
 [2026-11-15 19:09:14] [INFO] [Reserva] Reserva 'R-EJEMPLO': Confirmada a Procesada
 [2026-11-15 19:09:14] [INFO] [Reserva] Fin del intento de procesar la reserva 'R-EJEMPLO'
 [2026-11-15 19:09:14] [ERROR] [SalaReuniones] La sala 'Sala Andes' tiene capacidad para 10 personas y se pidieron 12 | Tipo: RecursoNoDisponibleError
+[2026-11-21 14:59:19] [INFO] [Simulacion] Registro exitoso: Cliente [CLI-01] Laura Gomez (laura.gomez@unad.edu.co)
+[2026-11-21 14:59:19] [INFO] [Simulacion] Registro exitoso: Cliente [CLI-02] Andres Martinez (amartinez@empresa.co)
+[2026-11-21 14:59:19] [ADVERTENCIA] [Cliente] Formato de correo invalido: 'carlos.ruiz_sin_arroba.com'. | Tipo: ValidacionError
+[2026-11-21 14:59:19] [ADVERTENCIA] [Cliente] Nombre de cliente invalido: ' '. | Tipo: ValidacionError
+[2026-11-21 14:59:19] [ADVERTENCIA] [Servicio] La tarifa (-50000) debe ser mayor a 0. | Tipo: ValidacionError
+[2026-11-21 14:59:19] [INFO] [ReservaFJ] Reserva RES-01 confirmada para Laura Gomez por $549,423.00
+[2026-11-21 14:59:19] [INFO] [ReservaFJ] Reserva RES-02 confirmada para Andres Martinez por $261,800.00
+[2026-11-21 14:59:19] [INFO] [ReservaFJ] Reserva RES-03 confirmada para Laura Gomez por $345,100.00
+[2026-11-21 14:59:19] [ERROR] [ReservaFJ] El servicio 'Sala Mantenimiento' no se encuentra disponible. | Tipo: RecursoNoDisponibleError
+[2026-11-21 14:59:19] [ADVERTENCIA] [EquipoTecnologico] El alquiler de equipos exige minimo 2 horas. | Tipo: ValidacionError
+[2026-11-21 14:59:19] [ERROR] [ReservaFJ] No fue posible procesar la reserva RES-05 debido a parametros invalidos. | Tipo: OperacionNoPermitidaError
+[2026-11-21 14:59:19] [ADVERTENCIA] [ReservaFJ] Reserva RES-02 cancelada por el usuario.
+[2026-11-21 14:59:19] [ERROR] [ReservaFJ] La reserva RES-02 ya fue cancelada previamente. | Tipo: OperacionNoPermitidaError
+[2026-11-21 14:59:19] [CRITICO] [Simulacion12] division by zero | Tipo: ZeroDivisionError | Origen: simulacion_integral_fase4.py:276
