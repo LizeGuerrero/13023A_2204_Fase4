@@ -288,3 +288,19 @@ if __name__ == "__main__":
 
     # 3) La aplicación sigue activa después de los errores.
     print(f"La aplicación continúa estable. Revisa el log en: {RUTA_LOG}")
+
+---
+
+## Modulo de Simulaciones Integrales (`simulacion_integral_fase4.py`)
+
+Este modulo complementa la arquitectura de **Software FJ** conectandose directamente con `excepciones.py` para validar la estabilidad del sistema ante escenarios reales y fallos criticos sin interrumpir la ejecucion.
+
+### Caracteristicas implementadas:
+* **Jerarquia POO completa:** Clases abstractas (`EntidadBaseFJ`, `ServicioBaseFJ`), encapsulacion mediante `@property` y polimorfismo en tres servicios especializados (`SalaReuniones`, `EquipoTecnologico`, `AsesoriaTecnica`).
+* **Sobrecarga funcional:** Calculo flexible de tarifas con parametros opcionales (`descuento`, `iva`, `recargo`).
+* **Manejo avanzado de excepciones:** Uso explicito de bloques `try/except/else`, `try/finally` y **encadenamiento de excepciones** (`raise ... from ...`) propagando causas raiz hacia `OperacionNoPermitidaError`.
+* **Bateria de 12 simulaciones:** Ejecuta registros validos e invalidos de clientes, creacion de servicios, calculo de tarifas, reservas exitosas, indisponibilidad de recursos y control de estados.
+
+### Ejecucion de las pruebas
+```bash
+python simulacion_integral_fase4.py
